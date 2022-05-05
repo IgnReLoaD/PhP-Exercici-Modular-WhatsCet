@@ -16,7 +16,7 @@
             <h2>WhatsCet</h2>                    
             <menu>
                 <ul>
-                    <li>opcio1</li>
+                    <li>opcio1 </li>
                     <li>opcio2</li>
                 </ul>
             </menu>
