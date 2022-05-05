@@ -1,0 +1,131 @@
+<!-- <?php 
+    echo("hola");
+?> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author"      content="Ignasi Ortiz" />
+    <meta name="description" content="test arrays php" />
+    <meta name="keywords"    content="PhP learning">    
+
+    <!-- Bootstrap ... amb CDN (enllaços) ------------------------------------------  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" 
+    crossorigin="anonymous">
+
+    <!-- <link rel="stylesheet" 
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" 
+          crossorigin="anonymous"> -->
+          
+    <!-- Fonts Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <title>WhatsCet - Exercici PhP Modular</title>    
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css"> 
+    <header class="cabecera">        
+        <nav class="navbar navbar-expand-lg fixed-top bg-color-cet text-white">
+            <div class="container">
+                <div id="navEsquerra" class="col-xs-10 col-lg-4 justify-content-start">
+                    <a id="logot" class="navbar-brand col-xs-2" href="#"><img src="./assets/logo_cet.png" class="logo-brand" style="height:60px; width:150px;" alt="logo"></a>
+                    <a id="titol" style="text-decoration:none;" class="col-xs-4 text-success font-weight-bold">WhatsCet</a>
+                </div>      
+                <div id="navDreta" class="col-xs-2 col-lg-4 d-flex justify-content-end align-self-center">       
+                    <!-- botó Dropdown boto-combo que pot desplegar persiana d'opcions -->
+                    <button type="button" class="col-xs-1 dropdown btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" style="cursor:pointer">
+                        <i class="fas fa-tools">  </i>                    
+                    </button>
+                    <!-- ocult: persiana desplegable amb les 2 sub-opcions  -->
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" data-toggle="modal" data-target="#modalLogin" style="cursor:pointer">   <i class="fas fa-user">   </i> &nbsp; Login</a>
+                        <a class="dropdown-item" data-toggle="modal" data-target="#modalConfig" style="cursor:pointer">   <i class="fas fa-cog">    </i> &nbsp; Config  </a>
+                        <a class="dropdown-item" data-toggle="modal" data-target="#modalHistoric" style="cursor:pointer"><i class="fas fa-folder"> </i> &nbsp; Historic</a>
+                    </div>                          
+                </div>
+                                                            
+            </div>
+        </nav>
+    </header>
+    
+    <H1> Exercici en PHP - practicar funcions </H1>  
+    
+    <modal class="modal fade" id="modalLogin">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <modalhead class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close btn-danger" data-dismiss="modal">&times;</button>
+                </modalhead>
+                <modalbody class="modal-body">
+                    <p>Entri les credencials:</p>    
+                    
+                    <form method="POST" name="frmLogin" id="frmLogin" class="container" novalidate>
+                        <div class="form-row row">
+                            <div class="form-group col-md-4">
+                                <label for="inpUsr"> Usuari (mail): </label>
+                                <input type="text" class="form-control" id="inpUsr" name="inpUsr" placeholder="usuari@domini...">
+                                <div class="invalid-feedback" id="errUsr"></div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inpPwd"> Contrasenya:</label>
+                                <input type="text" class="form-control" id="inpPwd" name="inpPwd" placeholder="contrasenya...">
+                                <div class="invalid-feedback" id="errPwd"></div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inpPwd2"> Repetir contr.:</label>
+                                <input type="text" class="form-control" id="inpPwd2" name="inpPwd2" placeholder="repetir contr...">
+                                <div class="invalid-feedback" id="errPwd2"></div>
+                            </div>
+                        </div>
+                        <p></p>
+                        <div class="text-end">
+                            <button type="button" class="btn btn-success" id="btnCreateCar" onclick="comprobaUsuari()">Entrada</button>
+                            <input type="reset" class="btn btn-primary" value="Reset">    
+                        </div>                    
+                    </form>
+                </modalbody>
+                <modalfoot class="modal-footer">  
+                    <p>Validació d'usuari.</p>
+                </modalfoot>
+            </div>
+        </div>
+    </modal>
+
+    <main>
+        <section id="contacts">
+            <p>Secció de contactes</p>
+        </section>
+        <section id="messages">
+            <p>Secció de missatges</p>
+            <article id="conversa">
+                <p>Article de conversa</p>
+            </article>
+                 
+        </section>
+    </main>
+    
+    <footer class="bg-success text-center text-white fixed-bottom h-64 py-4 ">
+        <form action="index.php" method="post">
+            <label for="newMsg">Nou missatge: </label>
+            <input type="text" id="newMsg" name="newMsg" placeholders="escriu..."/>
+            <input type="submit" value="Enviar"/>
+        </form>
+        <!-- <h4 class="bg-success text-center text-white fixed-bottom pb-1 pt-1">Cet-Penedès@2022</h4> -->
+    </footer>
+    <!-- scripts App  -->
+    <!-- <script src="./scripts/usuari.js"></script> -->
+    <script src="./scripts/functions.js"></script>    
+    <!-- scripts CSS: bootstrap jquery, popper, bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+</body>
+</html>

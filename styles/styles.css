@@ -1,7 +1,25 @@
 body {
     background-color: rgb(193, 212, 193);    
+    background-attachment: fixed; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    min-height: 700px; 
   }
-  
+
+.bg-color-cet {
+    background-color: rgb(193, 212, 193);   
+}
+
+#titol {
+    font-size: 45px;
+    padding-left: 15px;
+}
+
+/* nav {
+  navbar navbar-expand-lg fixed-top bg-danger text-white
+} */
+
 .cabecera {
     display: inline;
 }
@@ -19,11 +37,17 @@ body {
     border: 2px red solid ;
 }
 
+#newMsg {
+  width: 380px;
+  height: 100px;
+  background-color: rgb(193, 212, 193);    
+}
+
 #messages {
-    height: 400px;
+    height: 800px;
     width: 600px;
-    border: 2px blue solid ;
+    border: none;
     background-image: url("../assets/fondo.png");
-    opacity: 0.5;
+    opacity: 0.3;
     filter: grayscale(50%);
 }
