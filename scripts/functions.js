@@ -131,3 +131,154 @@ function comprobaUsuari() {
     return true;
 }
 
+function loadMessages(){
+    document.getElementById("messages").innerHTML = "GRAELLA DE MISSATGES DE VARIES PERSONES.";
+    
+    const AVATAR = '<img src="./assets/avatar.png" width="80px" heigh="80px">';
+
+    console.log('AVATAR vale: ', AVATAR);
+    document.getElementById("messages").innerHTML = AVATAR;
+
+
+    // const MESSAGES = fetchMessages("api_url: usuari/messages","method: GET","cnn: connection");
+    const MESSAGES = [
+        {
+            "contactName" : "Gaby",
+            "contactMail" : "gaby@gmail.com",
+            "contactHour" : "12:25",
+            "id_conversa" : "35"
+        },
+        {
+            "contactName" : "Sergi",
+            "contactMail" : "sergi@gmail.com",
+            "contactHour" : "12:10",
+            "id_conversa" : "39"
+        },
+        {
+            "contactName" : "Pau",
+            "contactMail" : "pau@gmail.com",
+            "contactHour" : "12:05",
+            "id_conversa" : "39"
+        },
+        {
+            "contactName" : "Judith",
+            "contactMail" : "judith@gmail.com",
+            "contactHour" : "11:40",
+            "id_conversa" : "39"
+        },
+        {
+            "contactName" : "Ignasi",
+            "contactMail" : "ignasi@gmail.com",
+            "contactHour" : "11:38",
+            "id_conversa" : "39"
+        },
+        {
+            "contactName" : "Dario",
+            "contactMail" : "dario@gmail.com",
+            "contactHour" : "11:20",
+            "id_conversa" : "39"
+        },
+        {
+            "contactName" : "Pere",
+            "contactMail" : "pere@gmail.com",
+            "contactHour" : "11:10",
+            "id_conversa" : "39"
+        },
+        {
+            "contactName" : "Jordi",
+            "contactMail" : "jordi@gmail.com",
+            "contactHour" : "11:08",
+            "id_conversa" : "39"
+        },
+        {
+            "contactName" : "Marta",
+            "contactMail" : "marta@gmail.com",
+            "contactHour" : "10:40",
+            "id_conversa" : "39"
+        },
+        {
+            "contactName" : "Joan",
+            "contactMail" : "joan@gmail.com",
+            "contactHour" : "10:30",
+            "id_conversa" : "39"
+        },
+        {
+            "contactName" : "Lluisa",
+            "contactMail" : "lluisa@gmail.com",
+            "contactHour" : "10:08",
+            "id_conversa" : "39"
+        },
+        {
+            "contactName" : "Joaquim",
+            "contactMail" : "joaqum@gmail.com",
+            "contactHour" : "09:30",
+            "id_conversa" : "39"
+        },
+        {
+            "contactName" : "Guillem",
+            "contactMail" : "guillem@gmail.com",
+            "contactHour" : "09:28",
+            "id_conversa" : "39"
+        },
+        {
+            "contactName" : "Joana",
+            "contactMail" : "joana@gmail.com",
+            "contactHour" : "09:15",
+            "id_conversa" : "39"
+        }
+    ]
+
+    console.log("MESSAGES: ", MESSAGES);
+
+    let TABLE = ""
+    TABLE = `<table>
+            <tr class="backgroud-color:lightblue">
+                <th class="width:20px">Foto</td>
+                <th class="width:80px">Nom</td>
+                <th class="width:80px">Mail</td>
+                <th class="width:80px">Hora</td>
+            </tr> `
+    console.log("TABLE: ", TABLE);
+
+    // alert("funció de carregar missatges");
+
+    MESSAGES.map( (item)=>{
+        let row =   `<tr>
+                        <td class="width:20px heigth:20px">` + AVATAR + `</td>
+                        <td class="width:80px">` + item.contactName + `</td>
+                        <td class="width:80px">` + item.contactMail + `</td>                        
+                        <td class="width:80px">` + item.contactHour + `</td>  
+                    </tr> `
+        TABLE = TABLE + row;
+        }
+    )
+
+    // <td>MESSAGES.contactName ` [i.nom]  ` </td>
+                        // <td>MESSAGES.contactName ` [i.hora]  ` </td>
+                        // <td>MESSAGES.contactName ` [i.notif]  ` </td>
+                        // <td>MESSAGES.contactName ` [i.id_conversa] ` </td>                        
+
+    TABLE = TABLE + `</table>`
+    
+    console.log("TABLE: ", TABLE);
+    document.getElementById("messages").innerHTML = TABLE;
+
+    return true;
+}
+
+function checkLogin(){
+    return true;
+}
+
+window.onload = ()=> {
+    // alert("onload");
+    let isLogin = checkLogin(); // DARIO
+
+    !isLogin ? 
+        document.getElementById("messages").innerHTML = "<br><br><br>Hola! qui ets? <br> Pots fer login al menú superior dret."
+    :
+        // document.getElementById("messages").innerHTML = "GRAELLA DE MISSATGES DE VARIES PERSONES."
+        loadMessages();
+
+    return true;
+}

@@ -44,10 +44,40 @@ body {
 }
 
 #messages {
-    height: 800px;
+    margin-top: 50px;
+    margin-bottom: 260px;
+    height: 100%;
     width: 600px;
     border: none;
     background-image: url("../assets/fondo.png");
+
     opacity: 0.3;
     filter: grayscale(50%);
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 160%;
+    font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background-color: rgb(24, 116, 32);
+  color: whitesmoke;
+}
+
+tr {
+  border-bottom: 2px solid rgb(24, 116, 32);
+}
+
+tr:nth-child(even) {
+  /* background-color: #aecece; */
+  opacity: 0.9;
+}
+
+tr:hover {
+  background-color: #e8eba1;  
 }

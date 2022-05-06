@@ -1,0 +1,30 @@
+[
+    {
+        "nombre"   : "Ignasi",
+        "email"    : "ortiz.ignasi@gmail.com",
+        "password" : "1234",
+        "contacts" : 
+            [
+                {
+                    "contactName" : "Gaby",
+                    "contactMail" : "gaby@gmail.com",
+                    "id_conversa" : "35"
+                },
+                {
+                    "contactName" : "Sergi",
+                    "contactMail" : "sergi@gmail.com",
+                    "id_conversa" : "39"
+                },
+                {
+                    "contactName" : "Pau",
+                    "contactMail" : "pau@gmail.com",
+                    "id_conversa" : "31"
+                },
+                {
+                    "contactName" : "Dario",
+                    "contactMail" : "dario@gmail.com",
+                    "id_conversa" : "23"
+                }
+            ]
+    }
+]
